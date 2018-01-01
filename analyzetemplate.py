@@ -65,7 +65,7 @@ def main(testmode = True):
 
     
     if testmode:
-        with open("testData.dat","r") as tstmp:
+        with open("testData.json","r") as tstmp:
             testData = json.load( tstmp )
             mempool = dict()
             for i in testData:
