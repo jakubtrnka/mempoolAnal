@@ -97,7 +97,7 @@ def main(testmode = True):
 
     fig = plt.figure(figsize=(60,30))
     ax = plt.gca()
-    ax.scatter(txsize, txfeerate, s=15)
+    ax.scatter(txsize, txfeerate, s = np.sqrt(txoutsum)*22, c = np.sqrt(txoutsum), cmap='viridis')
     ax.set_xlabel("size [B]", {"size":18})
     ax.set_ylabel("fee [Sat/B]", {"size":18})
     ax.set_xscale('log')
@@ -106,4 +106,4 @@ def main(testmode = True):
     plt.savefig("mempoolDump.png", c=txoutsum, bbox_inches='tight')
     
 if __name__=="__main__":
-    main(testmode = True)
+    main(testmode = False)
